@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>José Ignacio · NYE 2027 — The Sitara Estate</title>
+<meta name="description" content="New Year's 2027 at The Sitara Estate, José Ignacio, Uruguay — 8 nights, 3 houses, up to 28 friends. The house, the plan, the math, and one button to press if you're in.">
+<meta property="og:title" content="New Year's in José Ignacio — The Sitara Estate">
+<meta property="og:description" content="Dec 29, 2026 → Jan 6, 2027 · 3 houses, 3 pools, a helipad, and NYE under the country stars. Are you in?">
+<meta property="og:image" content="img/page02.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎆</text></svg>">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --shell:#F4F2EC;
+    --ink:#16283A;
+    --sea:#2E6E73;
+    --sun:#E0A458;
+    --dusk:#101D33;
+    --shell-deep:#E9E5DA;
+    --ink-soft:#4A5A6A;
+    --serif:"Didot","Bodoni 72","Playfair Display",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  }
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{background:var(--shell);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.5vw,44px);line-height:1.1;text-wrap:balance;margin:10px 0 14px}
+  section{padding:76px 0}
+  .num{font-variant-numeric:tabular-nums}
+  img{max-width:100%;display:block}
+
+  /* ---------- NAV ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(12,19,33,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  nav .bar{max-width:1020px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  nav .mark{font-family:var(--serif);font-size:17px;color:#F6F1E7;text-decoration:none;letter-spacing:.02em}
+  nav .mark em{color:var(--sun);font-style:italic}
+  nav .links{display:flex;gap:22px}
+  nav .links a{color:#C9C3B4;text-decoration:none;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+  nav .links a:hover,nav .links a:focus{color:var(--sun)}
+  nav .links a.cta{color:var(--sun)}
+  @media (max-width:640px){nav .links a:not(.cta){display:none}}
+
+  /* ---------- HERO : white farmhouse on the meadow ---------- */
+  .hero{
+    background:
+      linear-gradient(180deg,rgba(9,15,28,.72) 0%,rgba(12,20,36,.34) 40%,rgba(14,22,38,.30) 60%,rgba(16,22,38,.86) 100%),
+      url("img/page02.jpg") center 68%/cover no-repeat,
+      #22314A;
+    color:#F6F1E7;padding:180px 0 0;position:relative;overflow:hidden;
+  }
+  .hero .wrap{position:relative;z-index:2;padding-bottom:150px}
+  .hero .eyebrow{color:var(--sun)}
+  .hero h1{
+    font-family:var(--serif);font-weight:400;letter-spacing:.01em;
+    font-size:clamp(44px,8.5vw,92px);line-height:1.02;text-wrap:balance;margin:18px 0 22px;
+    text-shadow:0 2px 24px rgba(5,10,20,.6);
+  }
+  .hero h1 em{font-style:italic;color:var(--sun)}
+  .hero p.lede{max-width:33em;font-size:clamp(16px,2vw,19px);color:#EAE5D8;text-shadow:0 1px 14px rgba(5,10,20,.65)}
+  .hero .facts{display:flex;flex-wrap:wrap;gap:14px 36px;margin-top:44px}
+  .hero .facts div{font-size:14px;color:#DAD4C5;text-shadow:0 1px 10px rgba(5,10,20,.75)}
+  .hero .facts strong{display:block;font-size:20px;color:#F6F1E7;font-family:var(--serif);font-weight:400}
+  .horizon{display:block;width:100%;height:70px;margin-top:-70px;position:relative;z-index:2}
+
+  /* ---------- HOUSE ---------- */
+  .house .eyebrow{color:var(--sea)}
+  .statline{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--ink);margin:36px 0 44px}
+  .statline div{background:var(--shell);padding:18px 16px}
+  .statline strong{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(22px,3vw,30px)}
+  .statline span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+  @media (max-width:640px){.statline{grid-template-columns:repeat(2,1fr)}}
+  .houses3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--ink);margin-bottom:44px}
+  @media (max-width:760px){.houses3{grid-template-columns:1fr}}
+  .houses3>div{background:#fff;padding:26px}
+  .houses3 h3{font-family:var(--serif);font-weight:400;font-size:22px;margin-bottom:4px}
+  .houses3 .cap{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sea);font-weight:600;margin-bottom:12px}
+  .houses3 ul{list-style:none;font-size:14.5px;color:var(--ink-soft)}
+  .houses3 li{padding:6px 0;border-bottom:1px solid var(--shell-deep)}
+  .houses3 li:last-child{border-bottom:none}
+  .grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+  @media (max-width:760px){.grid2{grid-template-columns:1fr}}
+  .amenities{columns:2;gap:32px;font-size:15px;color:var(--ink-soft);list-style:none}
+  .amenities li{break-inside:avoid;padding:7px 0;border-bottom:1px solid var(--shell-deep)}
+  .amenities li::before{content:"— ";color:var(--sea)}
+  .staffcard{background:#fff;border:1px solid var(--shell-deep);padding:28px}
+  .staffcard h3{font-family:var(--serif);font-weight:400;font-size:22px;margin-bottom:10px}
+  .staffcard ul{list-style:none;font-size:15px}
+  .staffcard li{padding:8px 0;border-bottom:1px solid var(--shell-deep)}
+  .staffcard li:last-child{border-bottom:none}
+  .staffcard .tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sea);font-weight:600}
+  .staffcard .fine{font-size:13px;color:var(--ink-soft);margin-top:12px}
+
+  /* ---------- GALLERY ---------- */
+  .gallery{background:#fff;border-top:1px solid var(--shell-deep);border-bottom:1px solid var(--shell-deep)}
+  .gallery .eyebrow{color:var(--sea)}
+  .ggrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:36px}
+  @media (max-width:560px){.ggrid{grid-template-columns:1fr}}
+  .ggrid figure{position:relative;margin:0;cursor:zoom-in;overflow:hidden;background:var(--shell-deep)}
+  .ggrid img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9;transition:transform .5s ease}
+  @media (prefers-reduced-motion: no-preference){ .ggrid figure:hover img{transform:scale(1.035)} }
+  .ggrid figcaption{position:absolute;inset:auto 0 0 0;padding:26px 12px 10px;font-size:12.5px;letter-spacing:.03em;color:#F1ECDF;background:linear-gradient(180deg,transparent,rgba(12,19,33,.75));opacity:0;transition:opacity .3s ease}
+  .ggrid figure:hover figcaption,.ggrid figure:focus figcaption{opacity:1}
+  .gallery .credit{margin-top:18px;font-size:13px;color:var(--ink-soft)}
+
+  /* ---------- LIGHTBOX ---------- */
+  .lb{position:fixed;inset:0;z-index:100;background:rgba(8,13,24,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:28px}
+  .lb.open{display:flex}
+  .lb img{max-width:min(1100px,92vw);max-height:78vh;object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .lb .cap{color:#D5CFC0;font-size:14px;margin-top:16px;text-align:center;max-width:40em}
+  .lb button{position:absolute;background:none;border:none;color:#EDE7D9;font-size:34px;cursor:pointer;padding:16px;line-height:1;font-family:var(--serif)}
+  .lb button:hover{color:var(--sun)}
+  .lb .x{top:12px;right:16px}
+  .lb .prev{left:8px;top:50%;transform:translateY(-50%)}
+  .lb .next{right:8px;top:50%;transform:translateY(-50%)}
+
+  /* ---------- PLAN ---------- */
+  .plan .eyebrow{color:var(--sea)}
+  .days{margin-top:36px;display:grid;gap:0}
+  .day{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--shell-deep);align-items:baseline}
+  .day:last-child{border-bottom:none}
+  .day .date{font-family:var(--serif);font-size:19px;white-space:nowrap}
+  .day .what strong{font-weight:600}
+  .day .what span{color:var(--ink-soft);font-size:15px;display:block}
+  .day.nye{background:linear-gradient(90deg,transparent,rgba(224,164,88,.12),transparent);border-bottom:1px solid var(--sun)}
+  .day.nye .date{color:#9A6B1F}
+  @media (max-width:560px){.day{grid-template-columns:1fr;gap:2px}}
+  .plan .note{margin-top:24px;font-size:14px;color:var(--ink-soft);max-width:44em}
+
+  /* ---------- MATH ---------- */
+  .math{background:#fff;border-top:1px solid var(--shell-deep);border-bottom:1px solid var(--shell-deep)}
+  .math .eyebrow{color:var(--sea)}
+  .calc{background:var(--shell);border:1px solid var(--shell-deep);padding:36px;margin-top:36px}
+  .calc .headcount{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:8px}
+  .calc .headcount label{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+  .calc .headcount output{font-family:var(--serif);font-size:44px;line-height:1}
+  input[type=range]{width:100%;accent-color:var(--sea);margin:10px 0 30px;cursor:pointer}
+  table{width:100%;border-collapse:collapse;font-size:15px}
+  th{text-align:left;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);padding:0 0 10px;border-bottom:2px solid var(--ink)}
+  th:last-child,td:last-child{text-align:right}
+  td{padding:12px 0;border-bottom:1px solid var(--shell-deep)}
+  td .sub{display:block;font-size:13px;color:var(--ink-soft)}
+  tr.total td{border-bottom:none;border-top:2px solid var(--ink);font-weight:700;font-size:17px;padding-top:16px}
+  tr.total td:last-child{font-family:var(--serif);font-weight:400;font-size:26px}
+  .flights{margin-top:20px;font-size:14px;color:var(--ink-soft);max-width:46em}
+  .capnote{margin-top:16px;font-size:13px;color:#9A6B1F;display:none}
+
+  /* ---------- GETTING THERE ---------- */
+  .travel .eyebrow{color:var(--sea)}
+  .routes{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--ink);margin-top:32px}
+  @media (max-width:760px){.routes{grid-template-columns:1fr}}
+  .routes>div{background:var(--shell);padding:24px}
+  .routes h3{font-family:var(--serif);font-weight:400;font-size:21px;margin-bottom:8px}
+  .routes p{font-size:14px;color:var(--ink-soft)}
+
+  /* ---------- RSVP : night ---------- */
+  .rsvp{background:linear-gradient(180deg,#1A2C46 0%,var(--dusk) 55%,#0A1322 100%);color:#EDE7D9;position:relative;overflow:hidden;padding:96px 0 110px}
+  .rsvp .wrap{position:relative;z-index:2}
+  .rsvp .eyebrow{color:var(--sun)}
+  .rsvp h2{color:#F6F1E7}
+  .rsvp p{max-width:38em;color:#BDB7A8}
+  .rsvp .deadline{font-family:var(--serif);font-size:22px;color:var(--sun);margin:22px 0 34px}
+  .btns{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:15px 28px;font-size:15px;font-weight:600;text-decoration:none;border:1px solid transparent;transition:transform .15s ease,background .15s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.primary{background:var(--sun);color:#101D33}
+  .btn.primary:hover{background:#EBB86F}
+  .btn.ghost{border-color:#54627A;color:#EDE7D9}
+  .btn.ghost:hover{border-color:var(--sun);color:var(--sun)}
+  .rsvp .fine{margin-top:44px;font-size:13px;color:#7E8899}
+  .stars{position:absolute;inset:0;z-index:1;pointer-events:none}
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.in{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<nav aria-label="Page">
+  <div class="bar">
+    <a class="mark" href="#top">José Ignacio <em>NYE '27</em></a>
+    <div class="links">
+      <a href="#house">Estate</a><a href="#gallery">Photos</a><a href="#plan">Plan</a><a href="#math">Cost</a><a class="cta" href="#rsvp">RSVP →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">Dec 29, 2026 → Jan 6, 2027 · 8 nights · up to 28 friends</p>
+    <h1>New Year's in <em>José Ignacio</em></h1>
+    <p class="lede">Three houses, three pools, a private cook, and a helipad we probably won't use — ten minutes from the beaches of José Ignacio, Uruguay. We ring in 2027 in the countryside. This page has the estate, the plan, the math, and one button to press if you're in.</p>
+    <div class="facts">
+      <div><strong>The Sitara Estate</strong>3 km from José Ignacio</div>
+      <div><strong class="num">3 houses · 12 BR</strong>+ 2 bunk rooms · sleeps 28</div>
+      <div><strong class="num">~$8.3k</strong>per person, house all-in at 20</div>
+      <div><strong>NYE under the stars</strong>asado, pool, midnight</div>
+    </div>
+  </div>
+  <svg class="horizon" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,70 L0,40 Q360,10 720,38 T1440,32 L1440,70 Z" fill="#F4F2EC"/></svg>
+</header>
+
+<section class="house wrap reveal" id="house">
+  <p class="eyebrow">The Estate</p>
+  <h2>The Sitara Estate — a compound, not a house</h2>
+  <p style="max-width:46em;color:var(--ink-soft)">Launched in 2025, Sitara is roughly 1,500 m² of estate set in the quiet countryside 3 km from the ocean — close enough to hear it. Renting it takes all three residences, so couples and crews can spread out and regroup at the long table.</p>
+  <div class="statline num">
+    <div><strong>3</strong><span>Houses</span></div>
+    <div><strong>12 + 2</strong><span>Bedrooms + bunk rooms</span></div>
+    <div><strong>28</strong><span>Guests max</span></div>
+    <div><strong>3</strong><span>Private pools</span></div>
+  </div>
+  <div class="houses3">
+    <div>
+      <h3>The Principal House</h3>
+      <p class="cap">8 bedrooms · sleeps 18</p>
+      <ul>
+        <li>3 master suites + 2 two-bedroom family suites</li>
+        <li>Kids' bunk room</li>
+        <li>20 m pool with pool-house bar</li>
+        <li>Gourmet kitchen, fitness area, asado</li>
+        <li>Elevator + accessible throughout</li>
+      </ul>
+    </div>
+    <div>
+      <h3>The Guest House</h3>
+      <p class="cap">2 bedrooms + bunk · sleeps 8</p>
+      <ul>
+        <li>Super-king and twin, both ensuite</li>
+        <li>Kids' room with 4 single beds</li>
+        <li>Small private pool</li>
+        <li>Full kitchen and living spaces</li>
+        <li>Scenic countryside views</li>
+      </ul>
+    </div>
+    <div>
+      <h3>The Lake House</h3>
+      <p class="cap">2 bedrooms · sleeps 6</p>
+      <ul>
+        <li>Ensuite queen bedroom</li>
+        <li>Kids' room with 4 single beds</li>
+        <li>Small private pool</li>
+        <li>Full kitchen, comfortable living area</li>
+        <li>Sits on the estate's natural pond</li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid2">
+    <div>
+      <ul class="amenities">
+        <li>Three private pools</li>
+        <li>Helipad (arrivals, anyone?)</li>
+        <li>Fitness area</li>
+        <li>Vegetable garden + farm-to-table</li>
+        <li>Pool table, air hockey, fussball</li>
+        <li>Ping pong, croquet, petanque</li>
+        <li>Trampoline &amp; football pitch</li>
+        <li>Movie nights + board game library</li>
+        <li>Asado + multiple dining areas</li>
+        <li>Natural pond on the grounds</li>
+      </ul>
+    </div>
+    <div class="staffcard">
+      <p class="tag">Included in the rental</p>
+      <h3>Staffed by day</h3>
+      <ul>
+        <li>Private cook <span style="color:var(--ink-soft)">(we cover groceries)</span></li>
+        <li>Housekeeping, 8am – 7pm daily</li>
+        <li>Private concierge for excursions &amp; bookings</li>
+      </ul>
+      <p class="fine">Evenings the staff head home and the place is entirely ours — asado duty rotates. Extra staffing for NYE can be arranged.</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap reveal">
+    <p class="eyebrow">The Photos</p>
+    <h2>Have a look around</h2>
+    <div class="ggrid" id="ggrid">
+      <figure tabindex="0"><img src="img/page03.jpg" alt="Covered veranda with a long wooden dining table" loading="lazy"><figcaption>The veranda — long-table dinners for the whole crew</figcaption></figure>
+      <figure tabindex="0"><img src="img/page04.jpg" alt="Bright living room and dining area in the Principal House" loading="lazy"><figcaption>Living and dining in the Principal House</figcaption></figure>
+      <figure tabindex="0"><img src="img/page05.jpg" alt="Two of the estate's three pools with loungers and umbrellas" loading="lazy"><figcaption>Pick a pool — there are three</figcaption></figure>
+      <figure tabindex="0"><img src="img/page06.jpg" alt="Outdoor fitness area and spa towels" loading="lazy"><figcaption>The open-air gym</figcaption></figure>
+      <figure tabindex="0"><img src="img/page07.jpg" alt="Blue and white lounge in the Guest House" loading="lazy"><figcaption>Guest House lounge</figcaption></figure>
+      <figure tabindex="0"><img src="img/page08.jpg" alt="Media den with built-in shelving" loading="lazy"><figcaption>The den — movie nights live here</figcaption></figure>
+      <figure tabindex="0"><img src="img/page09.jpg" alt="Green kitchen with marble island and bar stools" loading="lazy"><figcaption>The kitchen our cook takes over</figcaption></figure>
+      <figure tabindex="0"><img src="img/page02.jpg" alt="The Sitara Estate main facade across the lawn" loading="lazy"><figcaption>The Principal House across the lawn</figcaption></figure>
+    </div>
+    <p class="credit">Photos from the Sitara Estate fact sheet (Miranda Bosch Real Estate). Tap any photo to enlarge.</p>
+  </div>
+</section>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="x" aria-label="Close">×</button>
+  <button class="prev" aria-label="Previous photo">‹</button>
+  <img id="lbimg" src="" alt="">
+  <p class="cap" id="lbcap"></p>
+  <button class="next" aria-label="Next photo">›</button>
+</div>
+
+<section class="plan wrap reveal" id="plan">
+  <p class="eyebrow">The Plan</p>
+  <h2>Eight nights, loosely scripted</h2>
+  <div class="days">
+    <div class="day"><span class="date">Tue · Dec 29</span><div class="what"><strong>Arrivals + welcome asado</strong><span>Land, claim your house, first parrilla on the veranda at sunset.</span></div></div>
+    <div class="day"><span class="date">Wed · Dec 30</span><div class="what"><strong>Beach day — José Ignacio</strong><span>Ten minutes to the sand. Umbrellas, beach lunch, ocean swim.</span></div></div>
+    <div class="day nye"><span class="date">Thu · Dec 31</span><div class="what"><strong>New Year's Eve 🎆</strong><span>Easy morning, then a proper asado, the pools, and midnight under real countryside stars. 2027 arrives here first.</span></div></div>
+    <div class="day"><span class="date">Fri · Jan 1</span><div class="what"><strong>Recovery day</strong><span>Three pools, zero plans. Croquet if anyone's feeling ambitious.</span></div></div>
+    <div class="day"><span class="date">Sat · Jan 2</span><div class="what"><strong>José Ignacio village</strong><span>The lighthouse, long lunch at Parador La Huella, browse the galleries.</span></div></div>
+    <div class="day"><span class="date">Sun · Jan 3</span><div class="what"><strong>Bodega Garzón wine day</strong><span>One of South America's great wineries is 20 minutes up the road. Tour, tasting, long lunch.</span></div></div>
+    <div class="day"><span class="date">Mon · Jan 4</span><div class="what"><strong>Punta del Este day or boat day</strong><span>Charter out of the harbor — Isla Gorriti, sea lions at Isla de Lobos — or shop and lunch in Punta.</span></div></div>
+    <div class="day"><span class="date">Tue · Jan 5</span><div class="what"><strong>Choose your adventure + last dinner</strong><span>Horseback, polo, surf or kite lesson, golf, whale watching — then one final long table.</span></div></div>
+    <div class="day"><span class="date">Wed · Jan 6</span><div class="what"><strong>Departures</strong><span>Late coffees on the veranda, airport runs.</span></div></div>
+  </div>
+  <p class="note">Nothing is mandatory. The estate has enough games, pools, and hammocks that "never left the property" is a legitimate itinerary. The concierge can set up tours, water sports, riding, and tee times on request.</p>
+</section>
+
+<section class="math" id="math">
+  <div class="wrap reveal">
+    <p class="eyebrow">The Math</p>
+    <h2>What it costs, per person</h2>
+    <div class="calc">
+      <div class="headcount">
+        <label for="heads">If this many people commit</label>
+        <output id="headsOut" class="num" for="heads">20</output>
+      </div>
+      <input type="range" id="heads" min="10" max="28" step="1" value="20" aria-label="Number of people">
+      <p class="capnote" id="capnote">Sitara sleeps up to 28 (including two kids' bunk rooms) — every extra friend makes it cheaper for everyone.</p>
+      <table aria-label="Per-person cost breakdown">
+        <thead><tr><th>Item</th><th>Per person</th></tr></thead>
+        <tbody class="num">
+          <tr><td>Estate — all 3 houses, 8 nights<span class="sub">$150,000 offer + 10% agent fee = $165,000 total, split evenly. Includes cook and daily housekeeping.</span></td><td id="cHouse"></td></tr>
+          <tr><td>Food &amp; drink at the estate<span class="sub">Groceries for the cook, wine, asado supplies — est. $100/day (not included in rental)</span></td><td>$800</td></tr>
+          <tr><td>Activities pool<span class="sub">Boat charter, Garzón tasting, beach days, NYE extras — est.</span></td><td>$600</td></tr>
+          <tr><td>Ground transport<span class="sub">Airport transfers + shared vans (not included in rental) — est.</span></td><td>$250</td></tr>
+          <tr class="total"><td>On-the-ground total</td><td id="cTotal"></td></tr>
+        </tbody>
+      </table>
+      <p class="flights"><strong>Plus flights, booked individually:</strong> roughly $1,100–$1,700 round trip from the US East Coast to Montevideo (MVD), typically via Miami or Panama City. Book early — this is Uruguay's peak week of the year.</p>
+      <p class="flights"><strong>The honest caveat:</strong> $150,000 is our opening offer — the manager invited it, but a counteroffer is likely (rack rate is $20k/night with a two-week minimum). Rule of thumb: every $10k they add is about $550 more per person at 20. Check-in may also shift to Dec 30 depending on the final deal.</p>
+    </div>
+  </div>
+</section>
+
+<section class="travel wrap reveal">
+  <p class="eyebrow">Getting There</p>
+  <h2>Three ways in</h2>
+  <div class="routes">
+    <div><h3>Via Montevideo</h3><p><strong>MVD</strong> — the main gateway. Overnight flights from the US via MIA/PTY, then a scenic 2.5-hour drive up the coast past Punta del Este. Transfers arranged for arrival waves.</p></div>
+    <div><h3>Via Buenos Aires</h3><p><strong>EZE → PDP</strong> — fly to Buenos Aires, then a 50-minute hop to Punta del Este's airport, about 40 minutes from the estate. Great option if you want a BA night first.</p></div>
+    <div><h3>The showoff route</h3><p><strong>By helicopter</strong> — the estate has its own helipad. Charter from Punta or Montevideo and land on the lawn. Somebody should do it so the rest of us can watch.</p></div>
+  </div>
+</section>
+
+<section class="rsvp" id="rsvp">
+  <canvas class="stars" id="stars2" aria-hidden="true"></canvas>
+  <div class="wrap reveal">
+    <p class="eyebrow">The Ask</p>
+    <h2>Are you in?</h2>
+    <p>It's José Ignacio's biggest week of the year and the offer window is open now. One tap below sends Jesse an email — no money required to raise your hand, deposits come once we have a headcount and a signed deal.</p>
+    <p class="deadline">Reply by August 1 · deposit ~$2,500 to lock your spot after that</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:jesse@substream.ai?subject=Jos%C3%A9%20Ignacio%20NYE%3A%20I%27M%20IN%20%F0%9F%8E%86&body=Count%20me%20in%20for%20Jos%C3%A9%20Ignacio%2C%20Dec%2029%20%E2%80%93%20Jan%206.%0A%0AName%3A%0ABringing%20a%20%2B1%3F%20%20yes%20%2F%20no%0AAnything%20else%3A%20">I'm in — count me 🎆</a>
+      <a class="btn ghost" href="mailto:jesse@substream.ai?subject=Jos%C3%A9%20Ignacio%20NYE%3A%20interested%2C%20need%20details&body=Interested%20but%20have%20questions%3A%0A%0A">Interested, tell me more</a>
+      <a class="btn ghost" href="mailto:jesse@substream.ai?subject=Jos%C3%A9%20Ignacio%20NYE%3A%20can%27t%20make%20it&body=Sadly%20out%20this%20time.%20Have%20an%20extra%20caipirinha%20for%20me.">Can't make it 💔</a>
+    </div>
+    <p class="fine">Dates: Dec 29, 2026 – Jan 6, 2027 (check-in may shift to Dec 30) · The Sitara Estate, José Ignacio, Uruguay · Questions → jesse@substream.ai</p>
+  </div>
+</section>
+
+<script>
+  // --- cost calculator ---
+  const HOUSE_TOTAL = 165000, FOOD = 800, ACT = 600, GROUND = 250;
+  const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
+  const heads = document.getElementById('heads');
+  function recalc(){
+    const n = +heads.value;
+    document.getElementById('headsOut').textContent = n;
+    const house = HOUSE_TOTAL / n;
+    document.getElementById('cHouse').textContent = fmt(house);
+    document.getElementById('cTotal').textContent = fmt(house + FOOD + ACT + GROUND);
+    document.getElementById('capnote').style.display = n < 28 ? 'block' : 'none';
+  }
+  heads.addEventListener('input', recalc);
+  recalc();
+
+  // --- lightbox ---
+  const figs = Array.from(document.querySelectorAll('#ggrid figure'));
+  const lb = document.getElementById('lb'), lbimg = document.getElementById('lbimg'), lbcap = document.getElementById('lbcap');
+  let cur = 0;
+  function show(i){
+    cur = (i + figs.length) % figs.length;
+    const img = figs[cur].querySelector('img');
+    lbimg.src = img.src; lbimg.alt = img.alt;
+    lbcap.textContent = figs[cur].querySelector('figcaption').textContent;
+    lb.classList.add('open');
+  }
+  function hide(){ lb.classList.remove('open'); }
+  figs.forEach((f, i) => {
+    f.addEventListener('click', () => show(i));
+    f.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(i); } });
+  });
+  lb.querySelector('.x').addEventListener('click', hide);
+  lb.querySelector('.prev').addEventListener('click', e => { e.stopPropagation(); show(cur - 1); });
+  lb.querySelector('.next').addEventListener('click', e => { e.stopPropagation(); show(cur + 1); });
+  lb.addEventListener('click', e => { if(e.target === lb) hide(); });
+  addEventListener('keydown', e => {
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') hide();
+    if(e.key === 'ArrowLeft') show(cur - 1);
+    if(e.key === 'ArrowRight') show(cur + 1);
+  });
+
+  // --- starfield (rsvp) ---
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  (function starfield(){
+    const c = document.getElementById('stars2'); if(!c) return;
+    const ctx = c.getContext('2d'); let stars = [];
+    function size(){
+      const p = c.parentElement;
+      c.width = p.offsetWidth * devicePixelRatio; c.height = p.offsetHeight * devicePixelRatio;
+      c.style.width = p.offsetWidth+'px'; c.style.height = p.offsetHeight+'px';
+      stars = Array.from({length: 70}, () => ({
+        x: Math.random()*c.width, y: Math.random()*c.height*0.5,
+        r: (Math.random()*1.1+0.3)*devicePixelRatio, p: Math.random()*Math.PI*2, s: 0.4+Math.random()*1.2
+      }));
+    }
+    function draw(t){
+      ctx.clearRect(0,0,c.width,c.height);
+      for(const st of stars){
+        const a = reduced ? 0.6 : 0.35 + 0.4*Math.abs(Math.sin(st.p + t*0.001*st.s));
+        ctx.globalAlpha = a; ctx.fillStyle = '#EFE6CF';
+        ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, Math.PI*2); ctx.fill();
+      }
+      if(!reduced) requestAnimationFrame(draw);
+    }
+    size(); addEventListener('resize', size);
+    reduced ? draw(0) : requestAnimationFrame(draw);
+  })();
+
+  // --- scroll reveals ---
+  const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('in')), {threshold: 0.12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
