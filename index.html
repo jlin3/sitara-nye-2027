@@ -46,23 +46,34 @@
   /* ---------- HERO : white farmhouse on the meadow ---------- */
   .hero{
     background:
-      linear-gradient(180deg,rgba(9,15,28,.72) 0%,rgba(12,20,36,.34) 40%,rgba(14,22,38,.30) 60%,rgba(16,22,38,.86) 100%),
+      linear-gradient(100deg,rgba(8,14,26,.84) 0%,rgba(9,16,30,.62) 46%,rgba(12,20,36,.28) 78%,rgba(12,20,36,.22) 100%),
+      linear-gradient(180deg,rgba(9,15,28,.55) 0%,rgba(12,20,36,0) 40%,rgba(14,22,38,0) 55%,rgba(16,22,38,.9) 100%),
       url("img/page02.jpg") center 68%/cover no-repeat,
       #22314A;
     color:#F6F1E7;padding:180px 0 0;position:relative;overflow:hidden;
   }
   .hero .wrap{position:relative;z-index:2;padding-bottom:150px}
-  .hero .eyebrow{color:var(--sun)}
+  .hero .eyebrow{color:#F0BE74;text-shadow:0 1px 12px rgba(0,0,0,.8)}
   .hero h1{
     font-family:var(--serif);font-weight:400;letter-spacing:.01em;
     font-size:clamp(44px,8.5vw,92px);line-height:1.02;text-wrap:balance;margin:18px 0 22px;
-    text-shadow:0 2px 24px rgba(5,10,20,.6);
+    text-shadow:0 3px 34px rgba(0,0,0,.8),0 1px 8px rgba(0,0,0,.55);
   }
-  .hero h1 em{font-style:italic;color:var(--sun)}
-  .hero p.lede{max-width:33em;font-size:clamp(16px,2vw,19px);color:#EAE5D8;text-shadow:0 1px 14px rgba(5,10,20,.65)}
+  .hero h1 em{font-style:italic;color:var(--sun);text-shadow:0 3px 34px rgba(0,0,0,.85),0 0 44px rgba(224,164,88,.45)}
+  .hero p.lede{max-width:31em;font-size:clamp(16.5px,2vw,20px);color:#FFF8EA;font-weight:500;text-shadow:0 2px 18px rgba(0,0,0,.85),0 1px 4px rgba(0,0,0,.6)}
   .hero .facts{display:flex;flex-wrap:wrap;gap:14px 36px;margin-top:44px}
-  .hero .facts div{font-size:14px;color:#DAD4C5;text-shadow:0 1px 10px rgba(5,10,20,.75)}
-  .hero .facts strong{display:block;font-size:20px;color:#F6F1E7;font-family:var(--serif);font-weight:400}
+  .hero .facts div{font-size:14px;color:#EFE9DA;font-weight:500;text-shadow:0 1px 12px rgba(0,0,0,.9),0 1px 3px rgba(0,0,0,.6)}
+  .hero .facts strong{display:block;font-size:22px;color:#FFFDF6;font-family:var(--serif);font-weight:400;text-shadow:0 2px 20px rgba(0,0,0,.9)}
+  @media (prefers-reduced-motion: no-preference){
+    .hero .eyebrow,.hero h1,.hero p.lede,.hero .facts div{opacity:0;transform:translateY(24px);animation:rise .85s cubic-bezier(.2,.7,.2,1) forwards}
+    .hero h1{animation-delay:.12s}
+    .hero p.lede{animation-delay:.26s}
+    .hero .facts div:nth-child(1){animation-delay:.42s}
+    .hero .facts div:nth-child(2){animation-delay:.52s}
+    .hero .facts div:nth-child(3){animation-delay:.62s}
+    .hero .facts div:nth-child(4){animation-delay:.72s}
+    @keyframes rise{to{opacity:1;transform:none}}
+  }
   .horizon{display:block;width:100%;height:70px;margin-top:-70px;position:relative;z-index:2}
 
   /* ---------- HOUSE ---------- */
@@ -174,6 +185,29 @@
   @media (prefers-reduced-motion: no-preference){
     .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
     .reveal.in{opacity:1;transform:none}
+    /* staggered cascades inside revealed sections */
+    .reveal .statline div,.reveal .houses3>div,.reveal .ggrid figure,.reveal .day,.reveal .routes>div{
+      opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;
+    }
+    .reveal.in .statline div,.reveal.in .houses3>div,.reveal.in .ggrid figure,.reveal.in .day,.reveal.in .routes>div{opacity:1;transform:none}
+    .reveal.in :is(.statline div,.houses3>div,.ggrid figure,.day,.routes>div):nth-child(1){transition-delay:.05s}
+    .reveal.in :is(.statline div,.houses3>div,.ggrid figure,.day,.routes>div):nth-child(2){transition-delay:.13s}
+    .reveal.in :is(.statline div,.houses3>div,.ggrid figure,.day,.routes>div):nth-child(3){transition-delay:.21s}
+    .reveal.in :is(.statline div,.houses3>div,.ggrid figure,.day,.routes>div):nth-child(4){transition-delay:.29s}
+    .reveal.in :is(.ggrid figure,.day):nth-child(5){transition-delay:.37s}
+    .reveal.in :is(.ggrid figure,.day):nth-child(6){transition-delay:.45s}
+    .reveal.in :is(.ggrid figure,.day):nth-child(7){transition-delay:.53s}
+    .reveal.in :is(.ggrid figure,.day):nth-child(8){transition-delay:.61s}
+    /* gold shine sweep on the primary CTA */
+    .btn.primary{position:relative;overflow:hidden}
+    .btn.primary::after{content:"";position:absolute;top:0;left:-80%;width:55%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg)}
+    .btn.primary:hover::after,.btn.primary:focus::after{animation:shine .8s ease}
+    @keyframes shine{to{left:135%}}
+    /* number bump when the calculator changes */
+    .bump{animation:bump .32s cubic-bezier(.2,.7,.3,1.4)}
+    @keyframes bump{40%{transform:scale(1.14);color:var(--sea)}}
+    /* nye row glimmer */
+    .day.nye:hover{background:linear-gradient(90deg,transparent,rgba(224,164,88,.22),transparent)}
   }
 </style>
 </head>
@@ -190,13 +224,13 @@
 
 <header class="hero" id="top">
   <div class="wrap">
-    <p class="eyebrow">Dec 29, 2026 → Jan 6, 2027 · 8 nights · up to 28 friends</p>
+    <p class="eyebrow">Dec 29, 2026 → Jan 4, 2027 · 6 nights · up to 28 friends</p>
     <h1>New Year's in <em>José Ignacio</em></h1>
     <p class="lede">Three houses, three pools, a private cook, and a helipad we probably won't use — ten minutes from the beaches of José Ignacio, Uruguay. We ring in 2027 in the countryside. This page has the estate, the plan, the math, and one button to press if you're in.</p>
     <div class="facts">
       <div><strong>The Sitara Estate</strong>3 km from José Ignacio</div>
       <div><strong class="num">3 houses · 12 BR</strong>+ 2 bunk rooms · sleeps 28</div>
-      <div><strong class="num">~$8.3k</strong>per person, house all-in at 20</div>
+      <div><strong class="num">~$5k</strong>per person, house all-in at 20</div>
       <div><strong>NYE under the stars</strong>asado, pool, midnight</div>
     </div>
   </div>
@@ -304,19 +338,17 @@
 
 <section class="plan wrap reveal" id="plan">
   <p class="eyebrow">The Plan</p>
-  <h2>Eight nights, loosely scripted</h2>
+  <h2>Six nights, loosely scripted</h2>
   <div class="days">
     <div class="day"><span class="date">Tue · Dec 29</span><div class="what"><strong>Arrivals + welcome asado</strong><span>Land, claim your house, first parrilla on the veranda at sunset.</span></div></div>
     <div class="day"><span class="date">Wed · Dec 30</span><div class="what"><strong>Beach day — José Ignacio</strong><span>Ten minutes to the sand. Umbrellas, beach lunch, ocean swim.</span></div></div>
     <div class="day nye"><span class="date">Thu · Dec 31</span><div class="what"><strong>New Year's Eve 🎆</strong><span>Easy morning, then a proper asado, the pools, and midnight under real countryside stars. 2027 arrives here first.</span></div></div>
     <div class="day"><span class="date">Fri · Jan 1</span><div class="what"><strong>Recovery day</strong><span>Three pools, zero plans. Croquet if anyone's feeling ambitious.</span></div></div>
     <div class="day"><span class="date">Sat · Jan 2</span><div class="what"><strong>José Ignacio village</strong><span>The lighthouse, long lunch at Parador La Huella, browse the galleries.</span></div></div>
-    <div class="day"><span class="date">Sun · Jan 3</span><div class="what"><strong>Bodega Garzón wine day</strong><span>One of South America's great wineries is 20 minutes up the road. Tour, tasting, long lunch.</span></div></div>
-    <div class="day"><span class="date">Mon · Jan 4</span><div class="what"><strong>Punta del Este day or boat day</strong><span>Charter out of the harbor — Isla Gorriti, sea lions at Isla de Lobos — or shop and lunch in Punta.</span></div></div>
-    <div class="day"><span class="date">Tue · Jan 5</span><div class="what"><strong>Choose your adventure + last dinner</strong><span>Horseback, polo, surf or kite lesson, golf, whale watching — then one final long table.</span></div></div>
-    <div class="day"><span class="date">Wed · Jan 6</span><div class="what"><strong>Departures</strong><span>Late coffees on the veranda, airport runs.</span></div></div>
+    <div class="day"><span class="date">Sun · Jan 3</span><div class="what"><strong>Bodega Garzón + last dinner</strong><span>One of South America's great wineries is 20 minutes up the road — tour, tasting, long lunch. Then one final long table on the veranda.</span></div></div>
+    <div class="day"><span class="date">Mon · Jan 4</span><div class="what"><strong>Departures</strong><span>Late coffees on the veranda, airport runs.</span></div></div>
   </div>
-  <p class="note">Nothing is mandatory. The estate has enough games, pools, and hammocks that "never left the property" is a legitimate itinerary. The concierge can set up tours, water sports, riding, and tee times on request.</p>
+  <p class="note">Nothing is mandatory. The estate has enough games, pools, and hammocks that "never left the property" is a legitimate itinerary. The concierge can also set up a boat day out of Punta, horseback, polo, surf or kite lessons, golf, and whale watching on request.</p>
 </section>
 
 <section class="math" id="math">
@@ -333,15 +365,15 @@
       <table aria-label="Per-person cost breakdown">
         <thead><tr><th>Item</th><th>Per person</th></tr></thead>
         <tbody class="num">
-          <tr><td>Estate — all 3 houses, 8 nights<span class="sub">$150,000 offer + 10% agent fee = $165,000 total, split evenly. Includes cook and daily housekeeping.</span></td><td id="cHouse"></td></tr>
-          <tr><td>Food &amp; drink at the estate<span class="sub">Groceries for the cook, wine, asado supplies — est. $100/day (not included in rental)</span></td><td>$800</td></tr>
+          <tr><td>Estate — all 3 houses, 6 nights<span class="sub">Assumes $15k/night × 6 nights = $90,000 + 10% agent fee = $99,000 total, split evenly. Includes cook and daily housekeeping.</span></td><td id="cHouse"></td></tr>
+          <tr><td>Food &amp; drink at the estate<span class="sub">Groceries for the cook, wine, asado supplies — est. $100/day (not included in rental)</span></td><td>$600</td></tr>
           <tr><td>Activities pool<span class="sub">Boat charter, Garzón tasting, beach days, NYE extras — est.</span></td><td>$600</td></tr>
           <tr><td>Ground transport<span class="sub">Airport transfers + shared vans (not included in rental) — est.</span></td><td>$250</td></tr>
           <tr class="total"><td>On-the-ground total</td><td id="cTotal"></td></tr>
         </tbody>
       </table>
       <p class="flights"><strong>Plus flights, booked individually:</strong> roughly $1,100–$1,700 round trip from the US East Coast to Montevideo (MVD), typically via Miami or Panama City. Book early — this is Uruguay's peak week of the year.</p>
-      <p class="flights"><strong>The honest caveat:</strong> $150,000 is our opening offer — the manager invited it, but a counteroffer is likely (rack rate is $20k/night with a two-week minimum). Rule of thumb: every $10k they add is about $550 more per person at 20. Check-in may also shift to Dec 30 depending on the final deal.</p>
+      <p class="flights"><strong>The honest caveat:</strong> $15k/night is our negotiating target — the manager opened the door to an offer, but rack rate is $20k/night with a two-week minimum, so expect a counter. Rule of thumb: every $10k they add is about $550 more per person at 20. Exact check-in may also shift a day depending on the final deal.</p>
     </div>
   </div>
 </section>
@@ -364,26 +396,29 @@
     <p>It's José Ignacio's biggest week of the year and the offer window is open now. One tap below sends Jesse an email — no money required to raise your hand, deposits come once we have a headcount and a signed deal.</p>
     <p class="deadline">Reply by August 1 · deposit ~$2,500 to lock your spot after that</p>
     <div class="btns">
-      <a class="btn primary" href="mailto:jesse@substream.ai?subject=Jos%C3%A9%20Ignacio%20NYE%3A%20I%27M%20IN%20%F0%9F%8E%86&body=Count%20me%20in%20for%20Jos%C3%A9%20Ignacio%2C%20Dec%2029%20%E2%80%93%20Jan%206.%0A%0AName%3A%0ABringing%20a%20%2B1%3F%20%20yes%20%2F%20no%0AAnything%20else%3A%20">I'm in — count me 🎆</a>
+      <a class="btn primary" href="mailto:jesse@substream.ai?subject=Jos%C3%A9%20Ignacio%20NYE%3A%20I%27M%20IN%20%F0%9F%8E%86&body=Count%20me%20in%20for%20Jos%C3%A9%20Ignacio%2C%20Dec%2029%20%E2%80%93%20Jan%204.%0A%0AName%3A%0ABringing%20a%20%2B1%3F%20%20yes%20%2F%20no%0AAnything%20else%3A%20">I'm in — count me 🎆</a>
       <a class="btn ghost" href="mailto:jesse@substream.ai?subject=Jos%C3%A9%20Ignacio%20NYE%3A%20interested%2C%20need%20details&body=Interested%20but%20have%20questions%3A%0A%0A">Interested, tell me more</a>
       <a class="btn ghost" href="mailto:jesse@substream.ai?subject=Jos%C3%A9%20Ignacio%20NYE%3A%20can%27t%20make%20it&body=Sadly%20out%20this%20time.%20Have%20an%20extra%20caipirinha%20for%20me.">Can't make it 💔</a>
     </div>
-    <p class="fine">Dates: Dec 29, 2026 – Jan 6, 2027 (check-in may shift to Dec 30) · The Sitara Estate, José Ignacio, Uruguay · Questions → jesse@substream.ai</p>
+    <p class="fine">Dates: Dec 29, 2026 – Jan 4, 2027 (exact days pending the deal) · The Sitara Estate, José Ignacio, Uruguay · Questions → jesse@substream.ai</p>
   </div>
 </section>
 
 <script>
   // --- cost calculator ---
-  const HOUSE_TOTAL = 165000, FOOD = 800, ACT = 600, GROUND = 250;
+  const HOUSE_TOTAL = 99000, FOOD = 600, ACT = 600, GROUND = 250;
   const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
   const heads = document.getElementById('heads');
-  function recalc(){
+  function bump(el){ el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump'); }
+  function recalc(animate){
     const n = +heads.value;
-    document.getElementById('headsOut').textContent = n;
+    const out = document.getElementById('headsOut'), tot = document.getElementById('cTotal');
+    out.textContent = n;
     const house = HOUSE_TOTAL / n;
     document.getElementById('cHouse').textContent = fmt(house);
-    document.getElementById('cTotal').textContent = fmt(house + FOOD + ACT + GROUND);
+    tot.textContent = fmt(house + FOOD + ACT + GROUND);
     document.getElementById('capnote').style.display = n < 28 ? 'block' : 'none';
+    if(animate){ bump(out); bump(tot); }
   }
   heads.addEventListener('input', recalc);
   recalc();
@@ -445,6 +480,51 @@
   // --- scroll reveals ---
   const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('in')), {threshold: 0.12});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // --- confetti on "I'm in" ---
+  function confetti(x, y){
+    if(reduced) return;
+    const c = document.createElement('canvas');
+    c.style.cssText = 'position:fixed;inset:0;z-index:200;pointer-events:none';
+    document.body.appendChild(c);
+    const ctx = c.getContext('2d');
+    c.width = innerWidth * devicePixelRatio; c.height = innerHeight * devicePixelRatio;
+    ctx.scale(devicePixelRatio, devicePixelRatio);
+    const colors = ['#E0A458', '#F0BE74', '#2E6E73', '#F6F1E7', '#EBB86F', '#7FB5B9'];
+    const parts = Array.from({length: 160}, () => {
+      const ang = Math.random() * Math.PI * 2, sp = 5 + Math.random() * 11;
+      return {
+        x, y,
+        vx: Math.cos(ang) * sp, vy: Math.sin(ang) * sp - 7,
+        w: 5 + Math.random() * 6, h: 8 + Math.random() * 7,
+        rot: Math.random() * Math.PI * 2, vr: (Math.random() - .5) * .32,
+        color: colors[(Math.random() * colors.length) | 0],
+        life: 90 + Math.random() * 60
+      };
+    });
+    let frame = 0;
+    (function tick(){
+      ctx.clearRect(0, 0, innerWidth, innerHeight);
+      let alive = 0;
+      for(const p of parts){
+        if(frame > p.life) continue;
+        alive++;
+        p.vy += 0.26; p.vx *= 0.985;               // gravity + drag
+        p.x += p.vx; p.y += p.vy; p.rot += p.vr;
+        ctx.save();
+        ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+        ctx.globalAlpha = Math.max(0, 1 - frame / p.life);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h * Math.abs(Math.sin(p.rot)));  // flutter
+        ctx.restore();
+      }
+      frame++;
+      if(alive) requestAnimationFrame(tick); else c.remove();
+    })();
+  }
+  document.querySelector('.btn.primary').addEventListener('click', e => {
+    confetti(e.clientX || innerWidth / 2, e.clientY || innerHeight / 2);
+  });
 </script>
 </body>
 </html>
